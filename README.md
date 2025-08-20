@@ -48,20 +48,7 @@ SSL_VERIFY=True
 
 In your Clerk Dashboard:
 1. Go to **JWT Templates**
-2. Create a new template named `backend`
-3. Add these claims:
-```json
-{
-  "aud": "backend",
-  "exp": "{{exp}}",
-  "iat": "{{iat}}",
-  "iss": "{{iss}}",
-  "sub": "{{user.id}}",
-  "email": "{{user.primary_email_address.email_address}}",
-  "first_name": "{{user.first_name}}",
-  "last_name": "{{user.last_name}}"
-}
-```
+2. Create a new template named `backend` rest keep default settings and save it.
 
 ### 6. Run the Application
 
@@ -78,7 +65,7 @@ cd backend
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-uvicorn main:app --reload --port 8081
+python -m uvicorn main:app --reload --port 8081
 ```
 
 **Frontend:**
